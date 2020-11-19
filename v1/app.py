@@ -11,7 +11,8 @@ app = Flask(__name__)
 app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/v1/*": {"origins": "0.0.0.0"}})
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-
+app.config['DEBUG'] = True
+app.config['TESTING'] = True
 
 @app.errorhandler(404)
 def not_found(error):
